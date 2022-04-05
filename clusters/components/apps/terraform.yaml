@@ -1,0 +1,12 @@
+apiVersion: infra.contrib.fluxcd.io/v1alpha1
+kind: Terraform
+metadata:
+  name: helloworld
+  namespace: infra-system
+spec:
+  interval: 1m
+  approvePlan: "auto"
+  path: ./terraform/clusters/gsharpe-fluxv2/app1
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
